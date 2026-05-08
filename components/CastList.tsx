@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import { tmdbImageUrl } from "@/lib/tmdb/client";
 import type { TmdbCastMember } from "@/lib/tmdb/types";
 
@@ -31,7 +32,11 @@ function PersonCard({ person }: { person: TmdbCastMember }) {
   const photoUrl = tmdbImageUrl(person.profile_path, "w185");
 
   return (
-    <article>
+    <Link
+      href={`/actores/${person.id}`}
+      aria-label={`Ver filmografía de ${person.name}`}
+      className="group block rounded-xl focus:outline-none focus-visible:ring-2 focus-visible:ring-amber-500 focus-visible:ring-offset-2 focus-visible:ring-offset-neutral-950"
+    >
       <div className="relative aspect-[2/3] overflow-hidden rounded-xl bg-neutral-900">
         {photoUrl ? (
           <Image
@@ -39,7 +44,7 @@ function PersonCard({ person }: { person: TmdbCastMember }) {
             alt=""
             fill
             sizes="(min-width: 1024px) 200px, (min-width: 640px) 33vw, 50vw"
-            className="object-cover"
+            className="object-cover transition-transform group-hover:scale-105"
           />
         ) : (
           <div
@@ -50,7 +55,7 @@ function PersonCard({ person }: { person: TmdbCastMember }) {
           </div>
         )}
       </div>
-      <h3 className="mt-3 text-sm font-semibold leading-tight">
+      <h3 className="mt-3 text-sm font-semibold leading-tight transition-colors group-hover:text-amber-500">
         {person.name}
       </h3>
       {person.character && (
@@ -58,6 +63,6 @@ function PersonCard({ person }: { person: TmdbCastMember }) {
           {person.character}
         </p>
       )}
-    </article>
+    </Link>
   );
 }
