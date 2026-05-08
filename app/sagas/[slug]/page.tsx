@@ -4,6 +4,13 @@ import { notFound } from "next/navigation";
 import { ChronologyTimeline } from "@/components/ChronologyTimeline";
 import { OrderTabs, type ChronologyOrder } from "@/components/OrderTabs";
 import { getAllSagas, getSagaBySlug } from "@/lib/chronologies/loader";
+import type {
+  ChronologyEntry,
+  EnrichedEntry,
+} from "@/lib/chronologies/types";
+import { tmdbImageUrl } from "@/lib/tmdb/client";
+import { getMovie } from "@/lib/tmdb/movies";
+import { getTvShow } from "@/lib/tmdb/tv";
 
 type Props = {
   params: Promise<{ slug: string }>;
@@ -27,6 +34,23 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   };
 }
 
+async function enrichEntry(entry: ChronologyEntry): Promise<EnrichedEntry> {
+  try {
+    if (entry.kind === "movie") {
+      const movie = await getMovie(entry.tmdbId);
+      return { ...entry, posterUrl: tmdbImageUrl(movie.poster_path, "w185") };
+    }
+    const tv = await getTvShow(entry.tmdbId);
+    return { ...entry, posterUrl: tmdbImageUrl(tv.poster_path, "w185") };
+  } catch (error) {
+    console.error(
+      `[saga] TMDB fetch failed for ${entry.kind}/${entry.tmdbId}:`,
+      error,
+    );
+    return { ...entry, posterUrl: null };
+  }
+}
+
 export default async function SagaDetailPage({ params, searchParams }: Props) {
   const { slug } = await params;
   const { order: orderParam } = await searchParams;
@@ -36,6 +60,8 @@ export default async function SagaDetailPage({ params, searchParams }: Props) {
 
   const order: ChronologyOrder =
     orderParam === "release" ? "release" : "narrative";
+
+  const enrichedEntries = await Promise.all(saga.entries.map(enrichEntry));
 
   return (
     <div className="mx-auto max-w-4xl px-6 py-16 sm:py-24">
@@ -60,7 +86,7 @@ export default async function SagaDetailPage({ params, searchParams }: Props) {
 
       <OrderTabs slug={saga.slug} active={order} />
 
-      <ChronologyTimeline entries={saga.entries} order={order} />
+      <ChronologyTimeline entries={enrichedEntries} order={order} />
     </div>
   );
 }

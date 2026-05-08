@@ -18,3 +18,7 @@ export interface Saga {
   curatedAt: string;
   curatedBy?: string;
 }
+
+export interface EnrichedEntry extends ChronologyEntry {
+  posterUrl: string | null;
+}
