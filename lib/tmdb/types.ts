@@ -43,3 +43,38 @@ export type TmdbImageSize =
   | "w500"
   | "w780"
   | "original";
+
+export interface TmdbGenre {
+  id: number;
+  name: string;
+}
+
+export interface TmdbCollection {
+  id: number;
+  name: string;
+  poster_path: string | null;
+  backdrop_path: string | null;
+}
+
+export interface TmdbMovieDetails extends Omit<TmdbMovie, "genre_ids"> {
+  runtime: number | null;
+  genres: TmdbGenre[];
+  tagline: string;
+  status: string;
+  belongs_to_collection: TmdbCollection | null;
+}
+
+export interface TmdbTvDetails extends Omit<TmdbTvShow, "genre_ids"> {
+  number_of_seasons: number;
+  number_of_episodes: number;
+  episode_run_time: number[];
+  genres: TmdbGenre[];
+  tagline: string;
+  status: string;
+}
+
+export interface TmdbCredits {
+  id: number;
+  cast: TmdbCastMember[];
+  crew: Array<TmdbPerson & { job: string; department: string }>;
+}
