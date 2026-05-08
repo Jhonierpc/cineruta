@@ -1,0 +1,43 @@
+name: CI
+
+on:
+  pull_request:
+    branches: [main]
+  push:
+    branches: [main]
+
+jobs:
+  ci:
+    name: type-check · lint · build · test
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: "npm"
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Type check
+        run: npm run type-check
+
+      - name: Lint
+        run: npm run lint
+
+      - name: Build
+        run: npm run build
+        env:
+          # Cuando el build empiece a consumir TMDB, descomenta esta línea
+          # y agrega TMDB_API_KEY como secret en Settings → Secrets → Actions.
+          # TMDB_API_KEY: ${{ secrets.TMDB_API_KEY }}
+          NEXT_TELEMETRY_DISABLED: "1"
+
+      - name: Test (skipped if no test script defined)
+        run: npm test --if-present
