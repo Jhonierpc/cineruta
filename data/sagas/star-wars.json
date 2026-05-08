@@ -1,0 +1,108 @@
+{
+  "slug": "star-wars",
+  "name": "Star Wars — Saga Skywalker + Antología",
+  "description": "La Saga Skywalker (Episodios I–IX) más las películas antología Rogue One y Solo. Orden narrativo según la línea de tiempo de la galaxia (BBY / ABY).",
+  "entries": [
+    {
+      "tmdbId": 1893,
+      "kind": "movie",
+      "title": "Star Wars: Episode I - The Phantom Menace",
+      "releaseYear": 1999,
+      "narrativeOrder": 1,
+      "releaseOrder": 4,
+      "notes": "32 BBY. Anakin Skywalker es descubierto en Tatooine."
+    },
+    {
+      "tmdbId": 1894,
+      "kind": "movie",
+      "title": "Star Wars: Episode II - Attack of the Clones",
+      "releaseYear": 2002,
+      "narrativeOrder": 2,
+      "releaseOrder": 5,
+      "notes": "22 BBY. Inicio de las Guerras Clon."
+    },
+    {
+      "tmdbId": 1895,
+      "kind": "movie",
+      "title": "Star Wars: Episode III - Revenge of the Sith",
+      "releaseYear": 2005,
+      "narrativeOrder": 3,
+      "releaseOrder": 6,
+      "notes": "19 BBY. Caída de Anakin y nacimiento del Imperio."
+    },
+    {
+      "tmdbId": 348350,
+      "kind": "movie",
+      "title": "Solo: A Star Wars Story",
+      "releaseYear": 2018,
+      "narrativeOrder": 4,
+      "releaseOrder": 10,
+      "notes": "Aprox. 10 BBY. Origen de Han Solo."
+    },
+    {
+      "tmdbId": 330459,
+      "kind": "movie",
+      "title": "Rogue One: A Star Wars Story",
+      "releaseYear": 2016,
+      "narrativeOrder": 5,
+      "releaseOrder": 8,
+      "notes": "0 BBY. Termina inmediatamente antes del inicio de A New Hope."
+    },
+    {
+      "tmdbId": 11,
+      "kind": "movie",
+      "title": "Star Wars",
+      "releaseYear": 1977,
+      "narrativeOrder": 6,
+      "releaseOrder": 1,
+      "notes": "Episodio IV: A New Hope. 0 BBY. La que comenzó todo."
+    },
+    {
+      "tmdbId": 1891,
+      "kind": "movie",
+      "title": "The Empire Strikes Back",
+      "releaseYear": 1980,
+      "narrativeOrder": 7,
+      "releaseOrder": 2,
+      "notes": "Episodio V. 3 ABY."
+    },
+    {
+      "tmdbId": 1892,
+      "kind": "movie",
+      "title": "Return of the Jedi",
+      "releaseYear": 1983,
+      "narrativeOrder": 8,
+      "releaseOrder": 3,
+      "notes": "Episodio VI. 4 ABY. Cierre de la trilogía original."
+    },
+    {
+      "tmdbId": 140607,
+      "kind": "movie",
+      "title": "Star Wars: The Force Awakens",
+      "releaseYear": 2015,
+      "narrativeOrder": 9,
+      "releaseOrder": 7,
+      "notes": "Episodio VII. 34 ABY. Inicio de la trilogía secuela."
+    },
+    {
+      "tmdbId": 181808,
+      "kind": "movie",
+      "title": "Star Wars: The Last Jedi",
+      "releaseYear": 2017,
+      "narrativeOrder": 10,
+      "releaseOrder": 9,
+      "notes": "Episodio VIII. 34 ABY, inmediatamente después de TFA."
+    },
+    {
+      "tmdbId": 181812,
+      "kind": "movie",
+      "title": "Star Wars: The Rise of Skywalker",
+      "releaseYear": 2019,
+      "narrativeOrder": 11,
+      "releaseOrder": 11,
+      "notes": "Episodio IX. 35 ABY. Cierre de la Saga Skywalker."
+    }
+  ],
+  "curatedAt": "2026-05-08",
+  "curatedBy": "data-curation-agent"
+}
