@@ -1,0 +1,303 @@
+{
+  "slug": "mcu",
+  "name": "Marvel Cinematic Universe",
+  "description": "Universo cinematográfico de Marvel Studios. Películas teatrales de la Saga del Infinito y la Saga del Multiverso, en orden cronológico narrativo y de estreno.",
+  "entries": [
+    {
+      "tmdbId": 1771,
+      "kind": "movie",
+      "title": "Captain America: The First Avenger",
+      "releaseYear": 2011,
+      "narrativeOrder": 1,
+      "releaseOrder": 5,
+      "notes": "Ambientada en 1942–1945, durante la Segunda Guerra Mundial."
+    },
+    {
+      "tmdbId": 299537,
+      "kind": "movie",
+      "title": "Captain Marvel",
+      "releaseYear": 2019,
+      "narrativeOrder": 2,
+      "releaseOrder": 21,
+      "notes": "Ambientada principalmente en 1995. Origen de Carol Danvers."
+    },
+    {
+      "tmdbId": 1726,
+      "kind": "movie",
+      "title": "Iron Man",
+      "releaseYear": 2008,
+      "narrativeOrder": 3,
+      "releaseOrder": 1,
+      "notes": "Inicia la Fase 1 y la era moderna del MCU."
+    },
+    {
+      "tmdbId": 10138,
+      "kind": "movie",
+      "title": "Iron Man 2",
+      "releaseYear": 2010,
+      "narrativeOrder": 4,
+      "releaseOrder": 3
+    },
+    {
+      "tmdbId": 1724,
+      "kind": "movie",
+      "title": "The Incredible Hulk",
+      "releaseYear": 2008,
+      "narrativeOrder": 5,
+      "releaseOrder": 2,
+      "notes": "Cronológicamente concurrente con Iron Man 2 según la línea oficial de Marvel."
+    },
+    {
+      "tmdbId": 10195,
+      "kind": "movie",
+      "title": "Thor",
+      "releaseYear": 2011,
+      "narrativeOrder": 6,
+      "releaseOrder": 4
+    },
+    {
+      "tmdbId": 24428,
+      "kind": "movie",
+      "title": "The Avengers",
+      "releaseYear": 2012,
+      "narrativeOrder": 7,
+      "releaseOrder": 6,
+      "notes": "Climax de la Fase 1. Batalla de Nueva York."
+    },
+    {
+      "tmdbId": 68721,
+      "kind": "movie",
+      "title": "Iron Man 3",
+      "releaseYear": 2013,
+      "narrativeOrder": 8,
+      "releaseOrder": 7,
+      "notes": "Navidad inmediatamente posterior a la batalla de Nueva York."
+    },
+    {
+      "tmdbId": 76338,
+      "kind": "movie",
+      "title": "Thor: The Dark World",
+      "releaseYear": 2013,
+      "narrativeOrder": 9,
+      "releaseOrder": 8
+    },
+    {
+      "tmdbId": 100402,
+      "kind": "movie",
+      "title": "Captain America: The Winter Soldier",
+      "releaseYear": 2014,
+      "narrativeOrder": 10,
+      "releaseOrder": 9,
+      "notes": "Caída de S.H.I.E.L.D."
+    },
+    {
+      "tmdbId": 118340,
+      "kind": "movie",
+      "title": "Guardians of the Galaxy",
+      "releaseYear": 2014,
+      "narrativeOrder": 11,
+      "releaseOrder": 10
+    },
+    {
+      "tmdbId": 283995,
+      "kind": "movie",
+      "title": "Guardians of the Galaxy Vol. 2",
+      "releaseYear": 2017,
+      "narrativeOrder": 12,
+      "releaseOrder": 15,
+      "notes": "Pocos meses después del Vol. 1."
+    },
+    {
+      "tmdbId": 99861,
+      "kind": "movie",
+      "title": "Avengers: Age of Ultron",
+      "releaseYear": 2015,
+      "narrativeOrder": 13,
+      "releaseOrder": 11
+    },
+    {
+      "tmdbId": 102899,
+      "kind": "movie",
+      "title": "Ant-Man",
+      "releaseYear": 2015,
+      "narrativeOrder": 14,
+      "releaseOrder": 12
+    },
+    {
+      "tmdbId": 271110,
+      "kind": "movie",
+      "title": "Captain America: Civil War",
+      "releaseYear": 2016,
+      "narrativeOrder": 15,
+      "releaseOrder": 13,
+      "notes": "Divide a los Vengadores. Introduce a Spider-Man y Black Panther."
+    },
+    {
+      "tmdbId": 497698,
+      "kind": "movie",
+      "title": "Black Widow",
+      "releaseYear": 2021,
+      "narrativeOrder": 16,
+      "releaseOrder": 24,
+      "notes": "Ambientada entre Civil War e Infinity War."
+    },
+    {
+      "tmdbId": 315635,
+      "kind": "movie",
+      "title": "Spider-Man: Homecoming",
+      "releaseYear": 2017,
+      "narrativeOrder": 17,
+      "releaseOrder": 16,
+      "notes": "Pocos meses después de Civil War."
+    },
+    {
+      "tmdbId": 284052,
+      "kind": "movie",
+      "title": "Doctor Strange",
+      "releaseYear": 2016,
+      "narrativeOrder": 18,
+      "releaseOrder": 14
+    },
+    {
+      "tmdbId": 284054,
+      "kind": "movie",
+      "title": "Black Panther",
+      "releaseYear": 2018,
+      "narrativeOrder": 19,
+      "releaseOrder": 18,
+      "notes": "Una semana después de Civil War."
+    },
+    {
+      "tmdbId": 284053,
+      "kind": "movie",
+      "title": "Thor: Ragnarok",
+      "releaseYear": 2017,
+      "narrativeOrder": 20,
+      "releaseOrder": 17,
+      "notes": "Establece el setup de Infinity War."
+    },
+    {
+      "tmdbId": 299536,
+      "kind": "movie",
+      "title": "Avengers: Infinity War",
+      "releaseYear": 2018,
+      "narrativeOrder": 21,
+      "releaseOrder": 19,
+      "notes": "El Snap de Thanos."
+    },
+    {
+      "tmdbId": 363088,
+      "kind": "movie",
+      "title": "Ant-Man and the Wasp",
+      "releaseYear": 2018,
+      "narrativeOrder": 22,
+      "releaseOrder": 20,
+      "notes": "Concurrente con los eventos finales de Infinity War."
+    },
+    {
+      "tmdbId": 299534,
+      "kind": "movie",
+      "title": "Avengers: Endgame",
+      "releaseYear": 2019,
+      "narrativeOrder": 23,
+      "releaseOrder": 22,
+      "notes": "Salto temporal de 5 años. Cierre de la Saga del Infinito."
+    },
+    {
+      "tmdbId": 429617,
+      "kind": "movie",
+      "title": "Spider-Man: Far From Home",
+      "releaseYear": 2019,
+      "narrativeOrder": 24,
+      "releaseOrder": 23,
+      "notes": "Meses después de Endgame. Cierre de la Fase 3."
+    },
+    {
+      "tmdbId": 566525,
+      "kind": "movie",
+      "title": "Shang-Chi and the Legend of the Ten Rings",
+      "releaseYear": 2021,
+      "narrativeOrder": 25,
+      "releaseOrder": 25,
+      "notes": "Inicio efectivo de la Fase 4 narrativa."
+    },
+    {
+      "tmdbId": 524434,
+      "kind": "movie",
+      "title": "Eternals",
+      "releaseYear": 2021,
+      "narrativeOrder": 26,
+      "releaseOrder": 26,
+      "notes": "Revela historia ancestral del MCU."
+    },
+    {
+      "tmdbId": 634649,
+      "kind": "movie",
+      "title": "Spider-Man: No Way Home",
+      "releaseYear": 2021,
+      "narrativeOrder": 27,
+      "releaseOrder": 27,
+      "notes": "Apertura formal del multiverso."
+    },
+    {
+      "tmdbId": 453395,
+      "kind": "movie",
+      "title": "Doctor Strange in the Multiverse of Madness",
+      "releaseYear": 2022,
+      "narrativeOrder": 28,
+      "releaseOrder": 28
+    },
+    {
+      "tmdbId": 616037,
+      "kind": "movie",
+      "title": "Thor: Love and Thunder",
+      "releaseYear": 2022,
+      "narrativeOrder": 29,
+      "releaseOrder": 29
+    },
+    {
+      "tmdbId": 505642,
+      "kind": "movie",
+      "title": "Black Panther: Wakanda Forever",
+      "releaseYear": 2022,
+      "narrativeOrder": 30,
+      "releaseOrder": 30
+    },
+    {
+      "tmdbId": 640146,
+      "kind": "movie",
+      "title": "Ant-Man and the Wasp: Quantumania",
+      "releaseYear": 2023,
+      "narrativeOrder": 31,
+      "releaseOrder": 31,
+      "notes": "Inicio de la Fase 5. Introduce formalmente a Kang."
+    },
+    {
+      "tmdbId": 447365,
+      "kind": "movie",
+      "title": "Guardians of the Galaxy Vol. 3",
+      "releaseYear": 2023,
+      "narrativeOrder": 32,
+      "releaseOrder": 32
+    },
+    {
+      "tmdbId": 609681,
+      "kind": "movie",
+      "title": "The Marvels",
+      "releaseYear": 2023,
+      "narrativeOrder": 33,
+      "releaseOrder": 33
+    },
+    {
+      "tmdbId": 533535,
+      "kind": "movie",
+      "title": "Deadpool & Wolverine",
+      "releaseYear": 2024,
+      "narrativeOrder": 34,
+      "releaseOrder": 34,
+      "notes": "Trae oficialmente a Deadpool/Wolverine al MCU vía multiverso."
+    }
+  ],
+  "curatedAt": "2026-05-08",
+  "curatedBy": "data-curation-agent"
+}
