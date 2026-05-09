@@ -9,6 +9,12 @@ const KIND_LABEL: Record<MediaKind, string> = {
   anime: "Anime",
 };
 
+function entryHref(kind: MediaKind, tmdbId: number): string | null {
+  if (kind === "movie") return `/peliculas/${tmdbId}`;
+  if (kind === "tv") return `/series/${tmdbId}`;
+  return null;
+}
+
 export function ChronologyTimeline({
   entries,
   order,
@@ -60,15 +66,17 @@ export function ChronologyTimeline({
           </>
         );
 
+        const href = entryHref(entry.kind, entry.tmdbId);
+
         return (
           <li key={`${entry.tmdbId}-${idx}`} className="relative">
             <span
               aria-hidden="true"
               className="absolute -left-[33px] top-2 size-3 rounded-full bg-amber-500 ring-4 ring-neutral-950"
             />
-            {entry.kind === "movie" ? (
+            {href ? (
               <Link
-                href={`/peliculas/${entry.tmdbId}`}
+                href={href}
                 aria-label={`Ver detalles de ${entry.title}`}
                 className="group flex gap-4 rounded-xl focus:outline-none focus-visible:ring-2 focus-visible:ring-amber-500 focus-visible:ring-offset-2 focus-visible:ring-offset-neutral-950 sm:gap-6"
               >
