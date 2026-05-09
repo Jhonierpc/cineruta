@@ -1,0 +1,126 @@
+{
+  "slug": "disney-plus-mcu",
+  "name": "Disney+ MCU — Series originales",
+  "description": "Series originales del Universo Cinematográfico de Marvel estrenadas en Disney+ desde 2021. Todas son post-Endgame en el timeline principal, salvo Loki (TVA) y What If...? (multiverso). Una entrada por serie sin separar temporadas; visitar el detalle muestra el show completo en TMDB.",
+  "entries": [
+    {
+      "tmdbId": 85271,
+      "kind": "tv",
+      "title": "WandaVision",
+      "releaseYear": 2021,
+      "narrativeOrder": 1,
+      "releaseOrder": 1,
+      "notes": "Tres semanas después de Avengers: Endgame. Wanda procesa el duelo por Visión en Westview."
+    },
+    {
+      "tmdbId": 88396,
+      "kind": "tv",
+      "title": "The Falcon and the Winter Soldier",
+      "releaseYear": 2021,
+      "narrativeOrder": 2,
+      "releaseOrder": 2,
+      "notes": "Seis meses tras Endgame. Sam Wilson hereda el escudo del Capitán América."
+    },
+    {
+      "tmdbId": 84958,
+      "kind": "tv",
+      "title": "Loki",
+      "releaseYear": 2021,
+      "narrativeOrder": 3,
+      "releaseOrder": 3,
+      "notes": "Loki es capturado por la TVA tras el robo del Tesseract en Endgame. Cubre temporadas 1 (2021) y 2 (2023). Crítica para preparar Phase 5/6."
+    },
+    {
+      "tmdbId": 91363,
+      "kind": "tv",
+      "title": "What If...?",
+      "releaseYear": 2021,
+      "narrativeOrder": 4,
+      "releaseOrder": 4,
+      "notes": "Antología del multiverso narrada por The Watcher. Tres temporadas (2021, 2023, 2024). Eventos paralelos al timeline principal."
+    },
+    {
+      "tmdbId": 88329,
+      "kind": "tv",
+      "title": "Hawkeye",
+      "releaseYear": 2021,
+      "narrativeOrder": 5,
+      "releaseOrder": 5,
+      "notes": "Diciembre de 2024 en el MCU. Clint Barton entrena a Kate Bishop como sucesora."
+    },
+    {
+      "tmdbId": 92749,
+      "kind": "tv",
+      "title": "Moon Knight",
+      "releaseYear": 2022,
+      "narrativeOrder": 6,
+      "releaseOrder": 6,
+      "notes": "Marc Spector / Steven Grant: avatar de Khonshu con identidad disociativa. Standalone hasta nuevo aviso."
+    },
+    {
+      "tmdbId": 92782,
+      "kind": "tv",
+      "title": "Ms. Marvel",
+      "releaseYear": 2022,
+      "narrativeOrder": 7,
+      "releaseOrder": 7,
+      "notes": "Origen de Kamala Khan en Jersey City. Conecta directamente con la película The Marvels (2023)."
+    },
+    {
+      "tmdbId": 92783,
+      "kind": "tv",
+      "title": "She-Hulk: Attorney at Law",
+      "releaseYear": 2022,
+      "narrativeOrder": 8,
+      "releaseOrder": 8,
+      "notes": "Jennifer Walters tras Shang-Chi. Comedia legal con cuarta pared rota."
+    },
+    {
+      "tmdbId": 114472,
+      "kind": "tv",
+      "title": "Secret Invasion",
+      "releaseYear": 2023,
+      "narrativeOrder": 9,
+      "releaseOrder": 9,
+      "notes": "Nick Fury vuelve a la Tierra para descubrir una infiltración Skrull. Antesala de Thunderbolts."
+    },
+    {
+      "tmdbId": 122226,
+      "kind": "tv",
+      "title": "Echo",
+      "releaseYear": 2024,
+      "narrativeOrder": 10,
+      "releaseOrder": 10,
+      "notes": "Maya Lopez tras Hawkeye. Primera serie del subbrand Marvel Spotlight (consumible standalone)."
+    },
+    {
+      "tmdbId": 138501,
+      "kind": "tv",
+      "title": "Agatha All Along",
+      "releaseYear": 2024,
+      "narrativeOrder": 11,
+      "releaseOrder": 11,
+      "notes": "Spinoff de WandaVision. Agatha Harkness recorre el Camino de las Brujas."
+    },
+    {
+      "tmdbId": 202555,
+      "kind": "tv",
+      "title": "Daredevil: Born Again",
+      "releaseYear": 2025,
+      "narrativeOrder": 12,
+      "releaseOrder": 12,
+      "notes": "Continuación canónica de la serie de Netflix (2015–2018). Fisk como alcalde de NYC."
+    },
+    {
+      "tmdbId": 114471,
+      "kind": "tv",
+      "title": "Ironheart",
+      "releaseYear": 2025,
+      "narrativeOrder": 13,
+      "releaseOrder": 13,
+      "notes": "Riri Williams tras Wakanda Forever. Intersección entre tecnología Stark y magia."
+    }
+  ],
+  "curatedAt": "2026-05-09",
+  "curatedBy": "data-curation-agent"
+}
