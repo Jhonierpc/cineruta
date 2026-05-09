@@ -134,6 +134,15 @@ TMDB devuelve fechas como `"1965-04-04"`. `new Date("1965-04-04")` parsea como U
 ### Pre-render estático con searchParams
 `generateStaticParams` + `searchParams` funciona: la URL canónica se pre-renderiza, las variantes con `?order=release` se renderizan en request. No hace falta JS para el toggle.
 
+### Merge conflict commiteado en `main` (incidente 2026-05-08)
+PRs #10/#11/#12 se mergearon en serie sin `required_status_checks`. El conflicto de `lib/tmdb/types.ts` quedó con markers `<<<<<<<` que TypeScript reportó como `TS1185: Merge conflict marker encountered` — CI los detectó pero GitHub permitía el merge igual. `main` quedó roto ~4.5h hasta el hotfix PR #14. **Causa raíz**: branch protection sin status checks requeridos. **Cierre (PR #17)**: `required_status_checks` (`type-check · lint · build · test`, strict) + `enforce_admins` + `required_linear_history` + `required_conversation_resolution`. Validado en vivo con PR #18 (rama `qa/chore-verify-branch-protection`, cerrado y borrado): el merge fue rechazado en 3 niveles — `gh pr merge`, `mergeable_state=blocked`, y API REST `PUT /merge` con HTTP 405.
+
+### Provisionar Vercel sin dashboard
+Para CI / agentes / scripting hay un flujo CLI con Personal Access Token en [`docs/devops-setup.md` §2bis](docs/devops-setup.md). Notas críticas: (1) no pasar el token como `--token`, exportar `VERCEL_TOKEN`; (2) la cuenta personal no se acepta como `--scope`, usar el team auto-creado `<user>s-projects`; (3) `vercel env add` para Preview con todas las branches falla en non-interactive — workaround vía `POST /v10/projects/<id>/env` documentado en la guía. Skill complementaria: `vercel-cli-with-tokens`.
+
+### `TMDB_API_KEY` en el step Build de CI (bomba de tiempo)
+`.github/workflows/ci.yml:39` tiene comentado `TMDB_API_KEY: ${{ secrets.TMDB_API_KEY }}`. Hoy ningún build estático llama a TMDB y el step pasa verde. **Cuando agreguemos `generateStaticParams` con fetch real** (ej. pre-render de `/peliculas/[id]` por IDs del MCU, o catálogos con `popular`), **CI empezará a fallar con un error opaco**. Antes de subir el primer PR con prerender remoto: descomentar la línea + cargar el secret en `Settings → Secrets and variables → Actions`.
+
 ## Skills disponibles (usar cuando aplique)
 - `react-best-practices`, `composition-patterns`, `web-design-guidelines`, `react-view-transitions` — frontend
 - `deploy-to-vercel`, `vercel-cli-with-tokens` — devops
@@ -180,6 +189,7 @@ npm run dev
 |---|---|---|
 | `next lint` deprecado → migrar a ESLint CLI con `next-lint-to-eslint-cli` | `devops-agent` | Baja |
 | `npm audit fix` para 2 vulnerabilidades moderate | `devops-agent` | Baja |
+| Cargar `TMDB_API_KEY` como GitHub Actions secret + descomentar `ci.yml:39` antes de prerender remoto | `devops-agent` | Baja (hasta primer prerender con fetch) |
 | Tests con Vitest para `loader`, `tmdb/client`, componentes clave | `qa-agent` | Media |
 | `/peliculas` catálogo (no solo detalle) | `frontend-agent` | Media |
 | `/series/[id]` para entradas con `kind: tv` | `frontend-agent` + `backend-agent` | Media |
