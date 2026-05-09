@@ -168,11 +168,16 @@ npm run dev
 - Env vars (`TMDB_API_KEY`, `TMDB_API_BASE_URL`, `TMDB_IMAGE_BASE_URL`, `TMDB_DEFAULT_LANG`) presentes en Production / Preview / Development
 - Auto-deploys: push a `main` → Production; PR → Preview con URL única
 
+**Branch protection en `main`** (activa desde 2026-05-09):
+- Status checks requeridos: `type-check · lint · build · test` (strict — la rama debe estar al día con `main`)
+- `enforce_admins`, `required_linear_history`, `required_conversation_resolution` activos
+- Force-push y deletion bloqueados
+- Aprobaciones requeridas: 0 (proyecto solo, self-merge permitido)
+
 ### Pendientes conocidos (a tomar en futuros PRs)
 
 | Pendiente | Agente | Prioridad |
 |---|---|---|
-| Branch protection en `main` | `devops-agent` (manual / `gh`) | Alta |
 | `next lint` deprecado → migrar a ESLint CLI con `next-lint-to-eslint-cli` | `devops-agent` | Baja |
 | `npm audit fix` para 2 vulnerabilidades moderate | `devops-agent` | Baja |
 | Tests con Vitest para `loader`, `tmdb/client`, componentes clave | `qa-agent` | Media |
