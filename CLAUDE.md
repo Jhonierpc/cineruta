@@ -160,15 +160,24 @@ npm run dev
 
 **Datos curados disponibles**: MCU completo (34), Star Wars Skywalker (11), Star Wars Machete (5). Todos los TMDB IDs verificados.
 
-**Repo en GitHub** con 12 commits lineales en `main`, uno por PR.
+**Repo en GitHub** con commits lineales en `main`, uno por PR.
+
+**Desplegado en Vercel** desde 2026-05-08:
+- Proyecto: `jhonierrz-8259s-projects/cineruta` (`prj_Ju81yfjq99TfLHgYwAu1JCTqHRl9`)
+- URL de producción más reciente: https://cineruta-3a0e4bfal-jhonierrz-8259s-projects.vercel.app
+- Env vars (`TMDB_API_KEY`, `TMDB_API_BASE_URL`, `TMDB_IMAGE_BASE_URL`, `TMDB_DEFAULT_LANG`) presentes en Production / Preview / Development
+- Auto-deploys: push a `main` → Production; PR → Preview con URL única
+
+**Branch protection en `main`** (activa desde 2026-05-09):
+- Status checks requeridos: `type-check · lint · build · test` (strict — la rama debe estar al día con `main`)
+- `enforce_admins`, `required_linear_history`, `required_conversation_resolution` activos
+- Force-push y deletion bloqueados
+- Aprobaciones requeridas: 0 (proyecto solo, self-merge permitido)
 
 ### Pendientes conocidos (a tomar en futuros PRs)
 
 | Pendiente | Agente | Prioridad |
 |---|---|---|
-| Conectar Vercel desde dashboard + `TMDB_API_KEY` env var | `devops-agent` (manual) | Alta |
-| Branch protection en `main` | `devops-agent` (manual) | Media |
-| Mobile menu en `SiteHeader` (hidden bajo `sm:` actualmente) | `frontend-agent` | Media |
 | `next lint` deprecado → migrar a ESLint CLI con `next-lint-to-eslint-cli` | `devops-agent` | Baja |
 | `npm audit fix` para 2 vulnerabilidades moderate | `devops-agent` | Baja |
 | Tests con Vitest para `loader`, `tmdb/client`, componentes clave | `qa-agent` | Media |
