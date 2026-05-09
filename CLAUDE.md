@@ -187,8 +187,6 @@ npm run dev
 
 | Pendiente | Agente | Prioridad |
 |---|---|---|
-| `next lint` deprecado → migrar a ESLint CLI con `next-lint-to-eslint-cli` | `devops-agent` | Baja |
-| `npm audit fix` para 2 vulnerabilidades moderate | `devops-agent` | Baja |
 | Cargar `TMDB_API_KEY` como GitHub Actions secret + descomentar `ci.yml:39` antes de prerender remoto | `devops-agent` | Baja (hasta primer prerender con fetch) |
 | Tests con Vitest para `loader`, `tmdb/client`, componentes clave | `qa-agent` | Media |
 | `/peliculas` catálogo (no solo detalle) | `frontend-agent` | Media |
