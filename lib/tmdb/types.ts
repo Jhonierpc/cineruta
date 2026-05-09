@@ -44,7 +44,6 @@ export type TmdbImageSize =
   | "w780"
   | "original";
 
-<<<<<<< HEAD
 export interface TmdbGenre {
   id: number;
   name: string;
@@ -78,7 +77,8 @@ export interface TmdbCredits {
   id: number;
   cast: TmdbCastMember[];
   crew: Array<TmdbPerson & { job: string; department: string }>;
-=======
+}
+
 export interface TmdbPersonDetails extends TmdbPerson {
   biography: string;
   birthday: string | null;
@@ -121,5 +121,4 @@ export interface TmdbCombinedCredits {
   id: number;
   cast: TmdbPersonCredit[];
   crew: Array<TmdbPersonCredit & { job: string; department: string }>;
->>>>>>> 9eb17be (feat(backend): TMDB persons fetchers + types)
 }
