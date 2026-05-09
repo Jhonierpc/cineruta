@@ -66,6 +66,73 @@ A partir de aquí, Vercel:
 - Despliega **Production** automáticamente en cada push a `main`
 - Despliega **Preview** automáticamente en cada PR (con URL única por PR)
 
+> **Pre-requisito para auto-deploys**: tu cuenta de Vercel necesita una **GitHub Login Connection** activa (https://vercel.com/account/login-connections). Sin ella, `vercel link --repo` falla con `400: You need to add a Login Connection to your GitHub account first` y los pushes no disparan deploys.
+
+---
+
+## 2bis. Alternativa: Vercel CLI con token (no-dashboard)
+
+Cuando hace falta provisionar el proyecto sin abrir el dashboard (CI, agentes, scripting), se puede usar la CLI con un Personal Access Token. Usa la skill `vercel-cli-with-tokens`.
+
+### 2bis.1. Token y CLI
+1. Crear token en https://vercel.com/account/tokens (scope: tu cuenta).
+2. Exportarlo (nunca pasar como `--token` en línea de comandos):
+   ```bash
+   export VERCEL_TOKEN="<token>"
+   npm install -g vercel
+   vercel whoami    # debe imprimir tu username
+   ```
+
+### 2bis.2. Linkear el proyecto
+La cuenta personal **no se acepta como `--scope`**; usa el team auto-creado (`<user>s-projects`):
+```bash
+SCOPE="$(vercel teams ls 2>&1 | awk 'NR>3 && $1!=""{print $1; exit}')"
+vercel link --yes --project cineruta --scope "$SCOPE"
+```
+
+Si la GitHub Login Connection ya está activa, esto crea el proyecto en Vercel **y** conecta el repo de GitHub en una sola pasada. Si no, el link local funciona pero la conexión remota a GitHub hay que hacerla luego desde el dashboard (Project → Settings → Git → Connect Git Repository).
+
+### 2bis.3. Cargar variables de entorno
+Production y Development aceptan stdin sin más:
+```bash
+extract() { grep "^$1=" .env.local | head -1 | cut -d= -f2-; }
+
+for name in TMDB_API_KEY TMDB_API_BASE_URL TMDB_IMAGE_BASE_URL TMDB_DEFAULT_LANG; do
+  val=$(extract "$name")
+  for env in production development; do
+    printf '%s' "$val" | vercel env add "$name" "$env" --scope "$SCOPE"
+  done
+done
+```
+
+**Preview con `vercel env add` requiere `<gitbranch>`** aun pasando `--yes --value`; el modo "all preview branches" sin branch concreta falla en non-interactive con `git_branch_required`. Workaround vía API REST (preserva la semántica de "todos los branches"):
+```bash
+TEAM_ID=$(jq -r .orgId .vercel/project.json)
+PROJECT_ID=$(jq -r .projectId .vercel/project.json)
+
+for name in TMDB_API_KEY TMDB_API_BASE_URL TMDB_IMAGE_BASE_URL TMDB_DEFAULT_LANG; do
+  val=$(extract "$name")
+  body=$(jq -nc --arg k "$name" --arg v "$val" \
+    '{key:$k, value:$v, type:"encrypted", target:["preview"]}')
+  curl -sS -X POST "https://api.vercel.com/v10/projects/$PROJECT_ID/env?teamId=$TEAM_ID" \
+    -H "Authorization: Bearer $VERCEL_TOKEN" \
+    -H "Content-Type: application/json" \
+    -d "$body" >/dev/null
+done
+
+vercel env ls --scope "$SCOPE"   # verificar 4 vars × 3 envs = 12 entradas
+```
+
+### 2bis.4. Primer deploy preview desde CLI
+```bash
+vercel deploy --yes --scope "$SCOPE"
+```
+Sube los archivos locales y hace un build. Útil para validar antes de mergear.
+
+### 2bis.5. Higiene
+- Rotar el token al terminar: https://vercel.com/account/tokens.
+- `.vercel/` ya está en `.gitignore` — no commitearlo.
+
 ---
 
 ## 3. CI en GitHub Actions
