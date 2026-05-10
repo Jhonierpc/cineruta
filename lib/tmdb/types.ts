@@ -122,3 +122,10 @@ export interface TmdbCombinedCredits {
   cast: TmdbPersonCredit[];
   crew: Array<TmdbPersonCredit & { job: string; department: string }>;
 }
+
+export interface TmdbPaginatedResponse<T> {
+  page: number;
+  results: T[];
+  total_pages: number;
+  total_results: number;
+}
