@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { CastList } from "@/components/CastList";
 import { MovieHero } from "@/components/MovieHero";
+import { SagaConnection } from "@/components/SagaConnection";
+import { findSagaAppearances } from "@/lib/chronologies/sagaLookup";
 import { getMovie, getMovieCredits } from "@/lib/tmdb/movies";
 
 type Props = { params: Promise<{ id: string }> };
@@ -33,7 +35,7 @@ export default async function MovieDetailPage({ params }: Props) {
   const movieId = parseId(id);
   if (!movieId) notFound();
 
-  const [movie, credits] = await Promise.all([
+  const [movie, credits, appearances] = await Promise.all([
     getMovie(movieId).catch((error) => {
       console.error(`[movie/${id}] details fetch failed:`, error);
       return null;
@@ -41,6 +43,10 @@ export default async function MovieDetailPage({ params }: Props) {
     getMovieCredits(movieId).catch((error) => {
       console.error(`[movie/${id}] credits fetch failed:`, error);
       return null;
+    }),
+    findSagaAppearances(movieId, "movie").catch((error) => {
+      console.error(`[movie/${id}] saga lookup failed:`, error);
+      return [];
     }),
   ]);
 
@@ -51,6 +57,7 @@ export default async function MovieDetailPage({ params }: Props) {
   return (
     <>
       <MovieHero movie={movie} />
+      <SagaConnection appearances={appearances} />
       <CastList cast={topCast} />
     </>
   );

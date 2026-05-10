@@ -1,7 +1,9 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { CastList } from "@/components/CastList";
+import { SagaConnection } from "@/components/SagaConnection";
 import { TvHero } from "@/components/TvHero";
+import { findSagaAppearances } from "@/lib/chronologies/sagaLookup";
 import { getTvShow, getTvCredits } from "@/lib/tmdb/tv";
 
 type Props = { params: Promise<{ id: string }> };
@@ -32,7 +34,7 @@ export default async function TvDetailPage({ params }: Props) {
   const tvId = parseId(id);
   if (!tvId) notFound();
 
-  const [tv, credits] = await Promise.all([
+  const [tv, credits, appearances] = await Promise.all([
     getTvShow(tvId).catch((error) => {
       console.error(`[tv/${id}] details fetch failed:`, error);
       return null;
@@ -40,6 +42,10 @@ export default async function TvDetailPage({ params }: Props) {
     getTvCredits(tvId).catch((error) => {
       console.error(`[tv/${id}] credits fetch failed:`, error);
       return null;
+    }),
+    findSagaAppearances(tvId, "tv").catch((error) => {
+      console.error(`[tv/${id}] saga lookup failed:`, error);
+      return [];
     }),
   ]);
 
@@ -50,6 +56,7 @@ export default async function TvDetailPage({ params }: Props) {
   return (
     <>
       <TvHero tv={tv} />
+      <SagaConnection appearances={appearances} />
       <CastList cast={topCast} />
     </>
   );
