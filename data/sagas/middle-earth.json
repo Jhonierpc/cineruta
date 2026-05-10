@@ -1,0 +1,63 @@
+{
+  "slug": "middle-earth",
+  "name": "Tierra Media — El Hobbit + El Señor de los Anillos",
+  "description": "Hexalogía cinematográfica de Peter Jackson basada en las novelas de J. R. R. Tolkien. Incluye la trilogía de El Hobbit (estrenada 2012–2014, ambientada en T. E. 2941–2942) y la trilogía de El Señor de los Anillos (estrenada 2001–2003, ambientada ~60 años después en T. E. 3018–3019). El orden narrativo arranca con El Hobbit —donde Bilbo Bolsón encuentra el Anillo Único— aunque se estrenó una década después que LOTR, que retoma la historia con Frodo heredando el Anillo.",
+  "entries": [
+    {
+      "tmdbId": 49051,
+      "kind": "movie",
+      "title": "El hobbit: Un viaje inesperado",
+      "releaseYear": 2012,
+      "narrativeOrder": 1,
+      "releaseOrder": 4,
+      "notes": "Ambientada en T. E. 2941. Bilbo Bolsón se une a Gandalf y trece enanos en busca de Erebor. En esta entrega encuentra el Anillo Único en la cueva de Gollum."
+    },
+    {
+      "tmdbId": 57158,
+      "kind": "movie",
+      "title": "El hobbit: La desolación de Smaug",
+      "releaseYear": 2013,
+      "narrativeOrder": 2,
+      "releaseOrder": 5,
+      "notes": "T. E. 2941. La compañía cruza el Bosque Negro y llega a Erebor, donde despiertan al dragón Smaug. Gandalf investiga al Nigromante en Dol Guldur."
+    },
+    {
+      "tmdbId": 122917,
+      "kind": "movie",
+      "title": "El hobbit: La batalla de los cinco ejércitos",
+      "releaseYear": 2014,
+      "narrativeOrder": 3,
+      "releaseOrder": 6,
+      "notes": "T. E. 2941–2942. Cierre de la trilogía con la batalla por Erebor y la confirmación del retorno de Sauron. Bilbo regresa a la Comarca con el Anillo."
+    },
+    {
+      "tmdbId": 120,
+      "kind": "movie",
+      "title": "El señor de los anillos: La comunidad del anillo",
+      "releaseYear": 2001,
+      "narrativeOrder": 4,
+      "releaseOrder": 1,
+      "notes": "T. E. 3001–3019, ~60 años después de El Hobbit. Frodo hereda el Anillo de Bilbo y parte de la Comarca con la Comunidad rumbo a destruirlo en el Monte del Destino."
+    },
+    {
+      "tmdbId": 121,
+      "kind": "movie",
+      "title": "El señor de los anillos: Las dos torres",
+      "releaseYear": 2002,
+      "narrativeOrder": 5,
+      "releaseOrder": 2,
+      "notes": "T. E. 3019. La Comunidad se fragmenta. Frodo y Sam avanzan hacia Mordor con Gollum; Aragorn, Légolas y Gimli defienden Rohan en la batalla del Abismo de Helm."
+    },
+    {
+      "tmdbId": 122,
+      "kind": "movie",
+      "title": "El señor de los anillos: El retorno del rey",
+      "releaseYear": 2003,
+      "narrativeOrder": 6,
+      "releaseOrder": 3,
+      "notes": "T. E. 3019. Batalla de los Campos del Pelennor, destrucción del Anillo en el Monte del Destino y coronación de Aragorn. Cierra la Tercera Edad de la Tierra Media."
+    }
+  ],
+  "curatedAt": "2026-05-09",
+  "curatedBy": "data-curation-agent"
+}
