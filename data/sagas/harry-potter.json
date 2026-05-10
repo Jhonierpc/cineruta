@@ -1,0 +1,108 @@
+{
+  "slug": "harry-potter",
+  "name": "Wizarding World — Harry Potter + Animales Fantásticos",
+  "description": "Universo mágico creado por J. K. Rowling y producido por Warner Bros. Incluye las 8 películas de Harry Potter (1991–1998 in-universe) y la trilogía precuela Animales Fantásticos (años 1920s–1930s in-universe). El orden narrativo arranca con Animales Fantásticos —ambientadas más de 60 años antes que Harry Potter— aunque se estrenaron después.",
+  "entries": [
+    {
+      "tmdbId": 259316,
+      "kind": "movie",
+      "title": "Animales fantásticos y dónde encontrarlos",
+      "releaseYear": 2016,
+      "narrativeOrder": 1,
+      "releaseOrder": 9,
+      "notes": "Ambientada en 1926, en Nueva York. Newt Scamander llega a EE. UU. con su maleta de criaturas mágicas."
+    },
+    {
+      "tmdbId": 338952,
+      "kind": "movie",
+      "title": "Animales fantásticos: Los crímenes de Grindelwald",
+      "releaseYear": 2018,
+      "narrativeOrder": 2,
+      "releaseOrder": 10,
+      "notes": "Ambientada en 1927, principalmente en París. Ascenso del mago oscuro Gellert Grindelwald."
+    },
+    {
+      "tmdbId": 338953,
+      "kind": "movie",
+      "title": "Animales fantásticos: Los secretos de Dumbledore",
+      "releaseYear": 2022,
+      "narrativeOrder": 3,
+      "releaseOrder": 11,
+      "notes": "Ambientada en 1932. Dumbledore lidera la resistencia contra Grindelwald. Cierra la trilogía precuela estrenada hasta la fecha."
+    },
+    {
+      "tmdbId": 671,
+      "kind": "movie",
+      "title": "Harry Potter y la piedra filosofal",
+      "releaseYear": 2001,
+      "narrativeOrder": 4,
+      "releaseOrder": 1,
+      "notes": "Curso 1991–1992 en Hogwarts. Harry descubre que es un mago e ingresa al colegio."
+    },
+    {
+      "tmdbId": 672,
+      "kind": "movie",
+      "title": "Harry Potter y la cámara secreta",
+      "releaseYear": 2002,
+      "narrativeOrder": 5,
+      "releaseOrder": 2,
+      "notes": "Curso 1992–1993. Segundo año en Hogwarts."
+    },
+    {
+      "tmdbId": 673,
+      "kind": "movie",
+      "title": "Harry Potter y el prisionero de Azkaban",
+      "releaseYear": 2004,
+      "narrativeOrder": 6,
+      "releaseOrder": 3,
+      "notes": "Curso 1993–1994. Aparece Sirius Black."
+    },
+    {
+      "tmdbId": 674,
+      "kind": "movie",
+      "title": "Harry Potter y el cáliz de fuego",
+      "releaseYear": 2005,
+      "narrativeOrder": 7,
+      "releaseOrder": 4,
+      "notes": "Curso 1994–1995. Torneo de los Tres Magos y regreso de Voldemort."
+    },
+    {
+      "tmdbId": 675,
+      "kind": "movie",
+      "title": "Harry Potter y la Orden del Fénix",
+      "releaseYear": 2007,
+      "narrativeOrder": 8,
+      "releaseOrder": 5,
+      "notes": "Curso 1995–1996. Formación del Ejército de Dumbledore."
+    },
+    {
+      "tmdbId": 767,
+      "kind": "movie",
+      "title": "Harry Potter y el misterio del príncipe",
+      "releaseYear": 2009,
+      "narrativeOrder": 9,
+      "releaseOrder": 6,
+      "notes": "Curso 1996–1997. Muerte de Dumbledore."
+    },
+    {
+      "tmdbId": 12444,
+      "kind": "movie",
+      "title": "Harry Potter y las Reliquias de la Muerte - Parte 1",
+      "releaseYear": 2010,
+      "narrativeOrder": 10,
+      "releaseOrder": 7,
+      "notes": "1997. Caza de Horrocruxes. Primera mitad de la batalla final."
+    },
+    {
+      "tmdbId": 12445,
+      "kind": "movie",
+      "title": "Harry Potter y las Reliquias de la Muerte - Parte 2",
+      "releaseYear": 2011,
+      "narrativeOrder": 11,
+      "releaseOrder": 8,
+      "notes": "1998. Batalla de Hogwarts y desenlace de la saga. Epílogo 19 años después."
+    }
+  ],
+  "curatedAt": "2026-05-09",
+  "curatedBy": "data-curation-agent"
+}
