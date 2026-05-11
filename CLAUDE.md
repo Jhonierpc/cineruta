@@ -53,20 +53,23 @@ cineruta/
 │   ├── api/tmdb/health/       # GET diagnóstico TMDB con errores sanitizados
 │   ├── sagas/                 # listado de sagas curadas
 │   ├── sagas/[slug]/          # detalle con timeline + toggle Cronológico/Estreno
-│   ├── peliculas/[id]/        # detalle de película (backdrop, sinopsis, reparto)
+│   ├── peliculas/             # catálogo paginado (TMDB popular)
+│   ├── peliculas/[id]/        # detalle de película (backdrop, sinopsis, reparto, saga)
+│   ├── series/[id]/           # detalle de serie (hero, saga, reparto)
 │   ├── actores/[id]/          # detalle de actor con filmografía cronológica
 │   ├── layout.tsx             # SiteHeader + main + SiteFooter
 │   ├── page.tsx               # home cinematográfica
 │   └── globals.css            # design tokens (dark + amber accent)
 ├── components/                # PascalCase
-│   ├── SiteHeader.tsx, SiteFooter.tsx
-│   ├── SagaCard.tsx, ChronologyTimeline.tsx, OrderTabs.tsx
-│   ├── MoviePoster.tsx, MovieHero.tsx, CastList.tsx
+│   ├── SiteHeader.tsx, SiteFooter.tsx, MobileMenu.tsx
+│   ├── SagaCard.tsx, ChronologyTimeline.tsx, OrderTabs.tsx, SagaConnection.tsx
+│   ├── MoviePoster.tsx, MovieHero.tsx, MovieGrid.tsx, Pagination.tsx
+│   ├── TvHero.tsx, CastList.tsx
 │   └── PersonHero.tsx, FilmographyList.tsx
 ├── lib/
-│   ├── tmdb/                  # client.ts (Bearer auth, caching 24h), types.ts, movies.ts, tv.ts, persons.ts
-│   └── chronologies/          # types.ts (Saga, ChronologyEntry, EnrichedEntry), loader.ts (fs/promises)
-├── data/sagas/                # mcu.json (34), star-wars.json (11), star-wars-machete.json (5)
+│   ├── tmdb/                  # client.ts (Bearer auth, caching 24h), types.ts, movies.ts (+test), tv.ts, persons.ts, client.test.ts
+│   └── chronologies/          # types.ts (Saga, ChronologyEntry, EnrichedEntry), loader.ts (+test), sagaLookup.ts (+test)
+├── data/sagas/                # mcu (34), star-wars (11), star-wars-machete (5), disney-plus-mcu (13), harry-potter (11), middle-earth (6)
 ├── public/
 ├── .claude/agents/            # 7 agentes especializados
 ├── .github/workflows/ci.yml   # type-check + lint + build + tests
@@ -162,12 +165,12 @@ npm run dev
 
 | Pilar | Implementación |
 |---|---|
-| Catálogo TMDB | `/peliculas/[id]` con backdrop, sinopsis, géneros, runtime, top 12 del reparto |
-| Guía cronológica de sagas | `/sagas/[slug]` con timeline + toggle Cronológico/Estreno |
-| Reparto con imágenes | Cards en `/peliculas/[id]` linkeadas a `/actores/[id]` |
+| Catálogo TMDB | `/peliculas` (popular paginado) + `/peliculas/[id]` y `/series/[id]` con backdrop, sinopsis, géneros, reparto y conexión con saga |
+| Guía cronológica de sagas | `/sagas/[slug]` con timeline + toggle Cronológico/Estreno; cada entrada de detalle muestra su posición en las sagas a las que pertenece |
+| Reparto con imágenes | Cards en `/peliculas/[id]` y `/series/[id]` linkeadas a `/actores/[id]` |
 | Filmografía cronológica | `/actores/[id]` con bio, foto y filmografía oldest-first |
 
-**Datos curados disponibles**: MCU completo (34), Star Wars Skywalker (11), Star Wars Machete (5). Todos los TMDB IDs verificados.
+**Datos curados disponibles** (6 sagas, TMDB IDs verificados): MCU completo (34), Star Wars Skywalker (11), Star Wars Machete (5), Disney+ MCU (13), Wizarding World / Harry Potter (11), Middle-earth (6).
 
 **Repo en GitHub** con commits lineales en `main`, uno por PR.
 
@@ -188,7 +191,8 @@ npm run dev
 | Pendiente | Agente | Prioridad |
 |---|---|---|
 | Cargar `TMDB_API_KEY` como GitHub Actions secret + descomentar `ci.yml:39` antes de prerender remoto | `devops-agent` | Baja (hasta primer prerender con fetch) |
-| Tests con Vitest para `loader`, `tmdb/client`, componentes clave | `qa-agent` | Media |
-| `/peliculas` catálogo (no solo detalle) | `frontend-agent` | Media |
-| `/series/[id]` para entradas con `kind: tv` | `frontend-agent` + `backend-agent` | Media |
-| Más sagas curadas (Harry Potter, LOTR, Disney+ del MCU) | `data-curation-agent` | Media |
+| Ampliar coverage Vitest a componentes (`SagaCard`, `ChronologyTimeline`, `MovieHero`, `TvHero`, `PersonHero`) y `lib/tmdb/{tv,persons}.ts` — setup base ya existe (PR #26) | `qa-agent` | Media |
+| `/series` catálogo paginado + sección de temporadas en `/series/[id]` | `frontend-agent` | En curso (PR #29) |
+| `/actores` listado (search / popular, no solo detalle) | `frontend-agent` + `backend-agent` | Media |
+| Auditar UI con skill `frontend-design` recién instalado (accesibilidad, jerarquía visual, consistencia entre detalles) | `frontend-agent` | Baja |
+| Más sagas curadas (DC Extended Universe, James Bond, X-Men, Pixar, Indiana Jones) | `data-curation-agent` | Media |
