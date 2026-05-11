@@ -48,7 +48,7 @@ export function PersonHero({ person }: { person: TmdbPersonDetails }) {
           <p className="text-sm font-medium uppercase tracking-[0.2em] text-amber-500">
             {eyebrow(person.known_for_department)}
           </p>
-          <h1 className="mt-3 text-4xl font-bold tracking-tight sm:text-5xl">
+          <h1 className="mt-3 text-balance text-4xl font-bold tracking-tight sm:text-5xl">
             {person.name}
           </h1>
           {(birth || person.place_of_birth) && (

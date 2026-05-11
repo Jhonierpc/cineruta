@@ -15,7 +15,10 @@ export function FilmographyList({ credits }: { credits: TmdbPersonCredit[] }) {
   return (
     <ul className="divide-y divide-neutral-900">
       {credits.map((credit, idx) => (
-        <li key={`${credit.id}-${credit.media_type}-${idx}`}>
+        <li
+          key={`${credit.id}-${credit.media_type}-${idx}`}
+          className="[content-visibility:auto] [contain-intrinsic-size:auto_72px]"
+        >
           <FilmographyRow credit={credit} />
         </li>
       ))}
@@ -39,7 +42,7 @@ function FilmographyRow({ credit }: { credit: TmdbPersonCredit }) {
       className="group block rounded-lg focus:outline-none focus-visible:ring-2 focus-visible:ring-amber-500"
     >
       <div className="flex items-center gap-4 px-2 py-3 transition-colors group-hover:bg-neutral-900/50 sm:gap-5 sm:px-3">
-        <span className="w-10 shrink-0 font-mono text-sm text-amber-500 sm:w-14">
+        <span className="w-10 shrink-0 font-mono text-sm tabular-nums text-amber-500 sm:w-14">
           {year}
         </span>
         <div className="relative aspect-[2/3] w-10 shrink-0 overflow-hidden rounded-md bg-neutral-900 sm:w-12">

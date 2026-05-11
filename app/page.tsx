@@ -25,7 +25,7 @@ export default function Home() {
         <p className="text-sm font-medium uppercase tracking-[0.2em] text-amber-500">
           Tu guía cronológica del cine
         </p>
-        <h1 className="mt-5 text-5xl font-bold tracking-tight sm:text-7xl">
+        <h1 className="mt-5 text-balance text-5xl font-bold tracking-tight sm:text-7xl">
           Encuentra el orden correcto.
           <br />
           <span className="text-neutral-500">Disfruta cada saga.</span>

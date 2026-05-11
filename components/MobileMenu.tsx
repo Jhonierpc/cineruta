@@ -63,7 +63,7 @@ export function MobileMenu({ links }: { links: NavLink[] }) {
         <nav
           id="mobile-nav"
           aria-label="Navegación móvil"
-          className="absolute inset-x-0 top-full border-b border-neutral-900 bg-neutral-950/95 backdrop-blur"
+          className="absolute inset-x-0 top-full overscroll-contain border-b border-neutral-900 bg-neutral-950/95 backdrop-blur"
         >
           <ul className="mx-auto flex max-w-6xl flex-col px-4 py-2 text-base text-neutral-300">
             {links.map((link) => (

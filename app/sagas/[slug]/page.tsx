@@ -76,7 +76,7 @@ export default async function SagaDetailPage({ params, searchParams }: Props) {
         <p className="mt-8 text-sm font-medium uppercase tracking-[0.2em] text-amber-500">
           Saga curada
         </p>
-        <h1 className="mt-3 text-4xl font-bold tracking-tight sm:text-5xl">
+        <h1 className="mt-3 text-balance text-4xl font-bold tracking-tight sm:text-5xl">
           {saga.name}
         </h1>
         <p className="mt-4 max-w-2xl text-lg text-neutral-400">

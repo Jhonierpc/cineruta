@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import "./globals.css";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
@@ -7,6 +7,11 @@ export const metadata: Metadata = {
   title: "CineRuta — Tu guía cronológica del cine",
   description:
     "Descubre el orden cronológico correcto de sagas, franquicias y universos cinematográficos.",
+};
+
+export const viewport: Viewport = {
+  themeColor: "#0a0a0a",
+  colorScheme: "dark",
 };
 
 export default function RootLayout({
