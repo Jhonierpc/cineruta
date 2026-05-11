@@ -38,7 +38,6 @@ function FilmographyRow({ credit }: { credit: TmdbPersonCredit }) {
   return (
     <Link
       href={href}
-      aria-label={`Ver detalles de ${title}`}
       className="group block rounded-lg focus:outline-none focus-visible:ring-2 focus-visible:ring-amber-500"
     >
       <div className="flex items-center gap-4 px-2 py-3 transition-colors group-hover:bg-neutral-900/50 sm:gap-5 sm:px-3">

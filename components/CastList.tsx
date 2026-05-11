@@ -34,7 +34,6 @@ function PersonCard({ person }: { person: TmdbCastMember }) {
   return (
     <Link
       href={`/actores/${person.id}`}
-      aria-label={`Ver filmografía de ${person.name}`}
       className="group block rounded-xl focus:outline-none focus-visible:ring-2 focus-visible:ring-amber-500 focus-visible:ring-offset-2 focus-visible:ring-offset-neutral-950"
     >
       <div className="relative aspect-[2/3] overflow-hidden rounded-xl bg-neutral-900">
