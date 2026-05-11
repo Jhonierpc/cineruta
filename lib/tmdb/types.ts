@@ -64,6 +64,16 @@ export interface TmdbMovieDetails extends Omit<TmdbMovie, "genre_ids"> {
   belongs_to_collection: TmdbCollection | null;
 }
 
+export interface TmdbTvSeason {
+  id: number;
+  name: string;
+  overview: string;
+  season_number: number;
+  episode_count: number;
+  air_date: string | null;
+  poster_path: string | null;
+}
+
 export interface TmdbTvDetails extends Omit<TmdbTvShow, "genre_ids"> {
   number_of_seasons: number;
   number_of_episodes: number;
@@ -71,6 +81,7 @@ export interface TmdbTvDetails extends Omit<TmdbTvShow, "genre_ids"> {
   genres: TmdbGenre[];
   tagline: string;
   status: string;
+  seasons: TmdbTvSeason[];
 }
 
 export interface TmdbCredits {
