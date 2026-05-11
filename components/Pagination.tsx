@@ -61,9 +61,12 @@ function PageLink({
     "inline-flex items-center rounded-md border border-neutral-800 px-4 py-2 text-sm font-medium transition-colors";
 
   if (!href) {
+    const disabledHint =
+      rel === "prev" ? "No hay página anterior" : "No hay página siguiente";
     return (
       <span
         aria-disabled="true"
+        title={disabledHint}
         className={`${baseClasses} cursor-not-allowed text-neutral-700`}
       >
         {children}

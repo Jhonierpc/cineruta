@@ -77,7 +77,6 @@ export function ChronologyTimeline({
             {href ? (
               <Link
                 href={href}
-                aria-label={`Ver detalles de ${entry.title}`}
                 className="group flex gap-4 rounded-xl focus:outline-none focus-visible:ring-2 focus-visible:ring-amber-500 focus-visible:ring-offset-2 focus-visible:ring-offset-neutral-950 sm:gap-6"
               >
                 {inner}
