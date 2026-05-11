@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { CastList } from "@/components/CastList";
 import { SagaConnection } from "@/components/SagaConnection";
+import { SeasonsList } from "@/components/SeasonsList";
 import { TvHero } from "@/components/TvHero";
 import { findSagaAppearances } from "@/lib/chronologies/sagaLookup";
 import { getTvShow, getTvCredits } from "@/lib/tmdb/tv";
@@ -57,6 +58,7 @@ export default async function TvDetailPage({ params }: Props) {
     <>
       <TvHero tv={tv} />
       <SagaConnection appearances={appearances} />
+      <SeasonsList seasons={tv.seasons ?? []} />
       <CastList cast={topCast} />
     </>
   );
